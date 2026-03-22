@@ -11,6 +11,20 @@ theme_override_fonts/font = ExtResource("1_nt7q6")
 theme_override_font_sizes/font_size = 32
 text = "Dino's Score: "
 
+[node name="DinoSpeed" type="Label" parent="." unique_id=1742590288]
+anchors_preset = -1
+anchor_left = 0.919
+anchor_top = 0.93700004
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.31201172
+offset_top = -0.17602539
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_nt7q6")
+theme_override_font_sizes/font_size = 32
+text = " M/s"
+
 [node name="HighScorelabel" type="Label" parent="." unique_id=276805475]
 anchors_preset = 1
 anchor_left = 1.0
@@ -20,7 +34,7 @@ offset_bottom = 41.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("1_nt7q6")
 theme_override_font_sizes/font_size = 32
-text = "HghScore: "
+text = "HighScore: "
 
 [node name="StartGame" type="Label" parent="." unique_id=883358244]
 anchors_preset = 8

@@ -1,5 +1,13 @@
 extends Node
 
+#obstacles scenes
+var stump_scene = preload("res://scenes/stump.tscn")
+var rock_scene = preload("res://scenes/rock.tscn")
+var barrel_scene = preload("res://scenes/barrel.tscn")
+var bird_scene = preload("res://scenes/birdie.tscn")
+
+var obstacle := [stump_scene, rock_scene, barrel_scene]
+
 #game variables
 const DINO_START_POS := Vector2i(150, 495)
 const CAM_START_POS := Vector2i(576, 324)
@@ -19,20 +27,21 @@ func _ready():
 func new_game():
 	#reset the nodes & score
 	score = 0
+	Score()
 	$Dino.position = DINO_START_POS
 	$Dino.velocity = Vector2i(0, 0)
 	$Camera2D.position = CAM_START_POS
 	$Ground.position = Vector2i(0, 0)
 	$Ui.get_node("StartGame").show()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if game_running:
 
-		speed = START_SPEED
+		speed = START_SPEED + score / 500
 		score += 1.5
 		Score()
 		print("Dino Score: ", score)
-		
+		print("Dino Speed: ", speed)
 		$Dino.position.x += speed
 		$Camera2D.position.x += speed
 
@@ -48,3 +57,4 @@ func _process(delta):
 			
 func Score():
 	$Ui.get_node("Scorelabel").text = "Dino's Score: " + str(score)
+	$Ui.get_node("DinoSpeed").text = str(speed) + " M/s"

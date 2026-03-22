@@ -15,16 +15,17 @@ func _physics_process(delta):
 
 	# Ground animations (only if on floor)
 	if is_on_floor():
-		if Input.is_action_just_pressed("JUMP"):
-			velocity.y = JUMP;
-		
-		if Input.is_action_just_pressed("DUCK") or Input.is_action_pressed("DUCK"):
-			%DinoSprites.play("duck")
-			%RunColl.disabled = true
-			
+		if not get_parent().game_running:
+			%DinoSprites.play("idle")
 		else:
-			%RunColl.disabled = false
-			%DinoSprites.play("run")
+			if Input.is_action_just_pressed("JUMP"):
+				velocity.y = JUMP;
+			if Input.is_action_just_pressed("DUCK") or Input.is_action_pressed("DUCK"):
+				%DinoSprites.play("duck")
+				%RunColl.disabled = true
+			else:
+				%RunColl.disabled = false
+				%DinoSprites.play("run")
 	else:
 		%DinoSprites.play("jump")
 	# Airborne animation overrides ground animations

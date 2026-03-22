@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://cndo36o5jj5f2" path="res://scenes/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://d3yggkultybkd" path="res://scenes/ground.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://2cbsv6lk0tc0" path="res://dino/dino.tscn" id="3_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://b6mm4mlsdk6n8" path="res://scenes/birdie.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cl54nvjnw42i4" path="res://scenes/ui.tscn" id="6_tefeu"]
 
 [node name="Main" type="Node" unique_id=1199221254]
@@ -20,9 +19,6 @@ position = Vector2(132, 485)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1335145522]
 position = Vector2(576, 324)
-
-[node name="Birdie" parent="." unique_id=1626678162 instance=ExtResource("4_jyhfs")]
-position = Vector2(663, 391)
 
 [node name="Ui" parent="." unique_id=1424898903 instance=ExtResource("6_tefeu")]
 
