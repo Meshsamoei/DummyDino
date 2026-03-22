@@ -203,7 +203,7 @@ scale = Vector2(1.0313907, 0.9827653)
 sprite_frames = SubResource("SpriteFrames_6xjqu")
 animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.58590555
+frame_progress = 0.7868659
 
 [node name="Jumpfxplayer" type="AudioStreamPlayer2D" parent="." unique_id=9844590]
 unique_name_in_owner = true
@@ -215,7 +215,7 @@ unique_name_in_owner = true
 position = Vector2(0.4375, 1.5)
 shape = SubResource("RectangleShape2D_830n8")
 
-[node name="Run" type="CollisionShape2D" parent="." unique_id=1223183093]
+[node name="RunColl" type="CollisionShape2D" parent="." unique_id=1223183093]
 unique_name_in_owner = true
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_f0wf5")

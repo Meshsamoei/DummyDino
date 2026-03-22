@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://b6mm4mlsdk6n8"]
+
+[ext_resource type="Texture2D" uid="uid://d3ohkusdg7xg" path="res://assets/img/obstacles/Bird.png" id="1_3b4wf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1a8kx"]
+atlas = ExtResource("1_3b4wf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aexk"]
+atlas = ExtResource("1_3b4wf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_181bg"]
+atlas = ExtResource("1_3b4wf")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_peibv"]
+atlas = ExtResource("1_3b4wf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0yo1"]
+atlas = ExtResource("1_3b4wf")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43hxl"]
+atlas = ExtResource("1_3b4wf")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55owg"]
+atlas = ExtResource("1_3b4wf")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5tvif"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1a8kx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6aexk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_181bg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_peibv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0yo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43hxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55owg")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3b4wf"]
+size = Vector2(14, 17)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3b4wf"]
+radius = 7.75
+height = 27.0
+
+[node name="Birdie" type="Area2D" unique_id=1626678162]
+texture_filter = 1
+scale = Vector2(4, 4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1923456356]
+sprite_frames = SubResource("SpriteFrames_5tvif")
+animation = &"fly"
+autoplay = "fly"
+frame_progress = 0.41260052
+
+[node name="Beak" type="CollisionShape2D" parent="." unique_id=1580365689]
+position = Vector2(-7, 0.5)
+shape = SubResource("RectangleShape2D_3b4wf")
+
+[node name="Body" type="CollisionShape2D" parent="." unique_id=916261904]
+position = Vector2(4.5, 0)
+shape = SubResource("CapsuleShape2D_3b4wf")

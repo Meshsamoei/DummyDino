@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cl54nvjnw42i4"]
+
+[ext_resource type="FontFile" uid="uid://d1rdgmkxxcn75" path="res://assets/fonts/retro.ttf" id="1_nt7q6"]
+
+[node name="Ui" type="CanvasLayer" unique_id=1424898903]
+
+[node name="Scorelabel" type="Label" parent="." unique_id=1572058535]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_nt7q6")
+theme_override_font_sizes/font_size = 32
+text = "Dino's Score: "
+
+[node name="HighScorelabel" type="Label" parent="." unique_id=276805475]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -239.0
+offset_bottom = 41.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_nt7q6")
+theme_override_font_sizes/font_size = 32
+text = "HghScore: "
+
+[node name="StartGame" type="Label" parent="." unique_id=883358244]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.5
+offset_top = -20.5
+offset_right = 119.5
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_nt7q6")
+theme_override_font_sizes/font_size = 32
+text = "Press Enter to Play !"

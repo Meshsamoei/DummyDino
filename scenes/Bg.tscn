@@ -7,13 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://cdv3ydmhsc1g6" path="res://assets/img/background/plx-5.png" id="5_wwjvv"]
 
 [node name="Bg" type="CanvasLayer" unique_id=1669656846]
+follow_viewport_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=935377643]
 texture = ExtResource("1_txxq3")
 centered = false
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1327168688]
-scroll_scale = Vector2(0.5, 1)
+scroll_scale = Vector2(0.6, 1)
 repeat_size = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1303888469]
@@ -21,7 +22,7 @@ texture = ExtResource("2_i3tfo")
 centered = false
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=802228090]
-scroll_scale = Vector2(0.65, 1)
+scroll_scale = Vector2(0.7, 1)
 repeat_size = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1099379557]
@@ -29,7 +30,7 @@ texture = ExtResource("3_ggxel")
 centered = false
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1926386820]
-scroll_scale = Vector2(0.7, 1)
+scroll_scale = Vector2(0.8, 1)
 repeat_size = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=1284382977]
@@ -37,7 +38,6 @@ texture = ExtResource("4_wpj3b")
 centered = false
 
 [node name="Parallax2D4" type="Parallax2D" parent="." unique_id=1745306168]
-scroll_scale = Vector2(0.9, 1)
 repeat_size = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" unique_id=1351000959]
