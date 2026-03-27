@@ -6,11 +6,14 @@ var rock_scene = preload("res://scenes/rock.tscn")
 var barrel_scene = preload("res://scenes/barrel.tscn")
 var bird_scene = preload("res://scenes/birdie.tscn")
 
-var obstacle := [stump_scene, rock_scene, barrel_scene]
+var obstacle_types := [stump_scene, rock_scene, barrel_scene]
+var obstacles : Array
+@export var bird_heights := [300, 400]
 
 #game variables
 const DINO_START_POS := Vector2i(150, 495)
 const CAM_START_POS := Vector2i(576, 324)
+var Ground_h : int
 
 var score : int
 var speed : float
@@ -19,10 +22,12 @@ const MAX_SPEED : int = 25
 var screen_size : Vector2i
 var game_running : bool
 var game_paused : bool
+var last_obstacle
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_window().size
+	Ground_h = $Ground.get_node("Sprite2D").texture.get_height()
 	new_game()
 
 func new_game():
@@ -64,6 +69,8 @@ func _physics_process(delta):
 		speed = START_SPEED + score / 500
 		if speed > MAX_SPEED:
 			speed = MAX_SPEED
+		#Obstacle spawning
+		_obstacles()
 		
 		# Update score
 		score += 1.5
@@ -91,3 +98,26 @@ func UI():
 		$Ui.get_node("StartGame").show()
 	else:
 		$Ui.get_node("StartGame").hide()
+
+func _obstacles():
+	#Grounded
+	if obstacles.is_empty() or last_obstacle.position.x < score + randi_range(100,150):
+		var obs_type = obstacle_types[randi() % obstacle_types.size()]
+		var obs = obs_type.instantiate()
+		var obs_h = obs.get_node("Sprite2D").texture.get_height()
+		var obs_s = obs.get_node("Sprite2D").scale
+		var obs_x : int = screen_size.x + score * 100
+		var obs_y : int = screen_size.y - Ground_h - (obs_s.y / 2) - 33
+		last_obstacle = obs
+		_add_obs(obs, obs_x, obs_y)
+		
+		
+		
+		
+	#Aerial
+
+
+func _add_obs(obs,x,y):
+		obs.position = Vector2i(x, y)
+		add_child(obs)
+		obstacles.append(obs)
