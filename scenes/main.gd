@@ -69,8 +69,7 @@ func _physics_process(delta):
 		speed = START_SPEED + score / 500
 		if speed > MAX_SPEED:
 			speed = MAX_SPEED
-		#Obstacle spawning
-		_obstacles()
+	
 		
 		# Update score
 		score += 1.5
@@ -83,7 +82,8 @@ func _physics_process(delta):
 		if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:
 			$Ground.position.x += screen_size.x
 			
-		# Spawn obstacles logic would go here
+		#Obstacle spawning
+		_obstacles()
 	else:
 		set_physics_process(false)
 func UI():
@@ -101,7 +101,7 @@ func UI():
 
 func _obstacles():
 	#Grounded
-	if obstacles.is_empty() or last_obstacle.position.x < score + randi_range(100,150):
+	if obstacles.is_empty() or last_obstacle.position.x < score + randi_range(300, 500):
 		var obs_type = obstacle_types[randi() % obstacle_types.size()]
 		var obs = obs_type.instantiate()
 		var obs_h = obs.get_node("Sprite2D").texture.get_height()
@@ -121,3 +121,4 @@ func _add_obs(obs,x,y):
 		obs.position = Vector2i(x, y)
 		add_child(obs)
 		obstacles.append(obs)
+		print("Obstacle Added at: X: ", x, ": Y : ", y)
