@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b6mm4mlsdk6n8"]
 
+[ext_resource type="Script" uid="uid://bmbk0uakew7a2" path="res://scenes/birdie.gd" id="1_1a8kx"]
 [ext_resource type="Texture2D" uid="uid://d3ohkusdg7xg" path="res://assets/img/obstacles/Bird.png" id="1_3b4wf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1a8kx"]
@@ -66,9 +67,10 @@ size = Vector2(14, 17)
 radius = 7.75
 height = 27.0
 
-[node name="Birdie" type="Area2D" unique_id=1626678162]
+[node name="Birdie" type="Area2D" unique_id=1626678162 groups=["obstacles"]]
 texture_filter = 1
 scale = Vector2(4, 4)
+script = ExtResource("1_1a8kx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1923456356]
 sprite_frames = SubResource("SpriteFrames_5tvif")

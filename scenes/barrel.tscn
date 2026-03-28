@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bokle5ye4k6a4" path="res://assets/img/obstacles/barrel.png" id="1_q36op"]
 
 [node name="Barrel" type="Area2D" unique_id=1959627504]
+z_index = -1
 texture_filter = 1
 scale = Vector2(4, 4)
 

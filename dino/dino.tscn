@@ -192,6 +192,9 @@ size = Vector2(11.125, 15)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0wf5"]
 size = Vector2(10, 17)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_830n8"]
+radius = 7.7620873
+
 [node name="Dino" type="CharacterBody2D" unique_id=701920725]
 scale = Vector2(8, 8)
 script = ExtResource("1_830n8")
@@ -219,3 +222,9 @@ shape = SubResource("RectangleShape2D_830n8")
 unique_name_in_owner = true
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_f0wf5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=599972273 groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1317944526]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_830n8")

@@ -87,7 +87,7 @@ theme_override_fonts/font = ExtResource("1_nt7q6")
 theme_override_font_sizes/font_size = 32
 text = " M/s"
 
-[node name="HighScorelabel" type="Label" parent="." unique_id=276805475]
+[node name="HighScoreLabel" type="Label" parent="." unique_id=276805475]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0

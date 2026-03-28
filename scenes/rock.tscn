@@ -3,10 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://cx6e01tnpvts3" path="res://assets/img/obstacles/rock.png" id="1_1di36"]
 
 [node name="Rock" type="Area2D" unique_id=1925666627]
+z_index = -1
 texture_filter = 1
 scale = Vector2(3, 3)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1599962645]
+position = Vector2(0, 3.166668)
+scale = Vector2(1, 1.2111112)
 texture = ExtResource("1_1di36")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1318788901]

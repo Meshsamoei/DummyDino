@@ -17,6 +17,11 @@ config/features=PackedStringArray("4.6", "Mobile")
 boot_splash/image="uid://cc6vdt6bgghxt"
 config/icon="uid://b82calmlad6lf"
 
+[global_group]
+
+obstacles="Obstacles to Kill Dino"
+player="Player Characters"
+
 [input]
 
 JUMP={
